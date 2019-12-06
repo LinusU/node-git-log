@@ -1,0 +1,17 @@
+{
+  "name": "git-log",
+  "version": "0.0.0",
+  "repository": "LinusU/node-git-log",
+  "license": "MIT",
+  "scripts": {
+    "test": "standard && mocha"
+  },
+  "dependencies": {
+    "execa": "^3.3.0"
+  },
+  "devDependencies": {
+    "fs-temp": "^1.1.2",
+    "mocha": "^6.2.2",
+    "standard": "^14.3.1"
+  }
+}
