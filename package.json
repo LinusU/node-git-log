@@ -1,6 +1,6 @@
 {
   "name": "git-log",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-rc.1",
   "repository": "LinusU/node-git-log",
   "license": "MIT",
   "type": "module",
