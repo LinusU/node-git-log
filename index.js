@@ -1,4 +1,4 @@
-const execa = require('execa')
+import { execa } from 'execa'
 
 const delim1 = 'E2B4D2F3-B7AF-4377-BF0F-D81F4E0723F3'
 const delim2 = '25B7DA41-228B-4679-B2A2-86E328D3C3DE'
@@ -16,7 +16,7 @@ function parseEntry (entry) {
   }
 }
 
-async function gitLog (options = {}) {
+export default async function gitLog (options = {}) {
   const args = ['log', formatFlag]
   const cwd = options.repo || undefined
 
@@ -28,5 +28,3 @@ async function gitLog (options = {}) {
 
   return (await execa('git', args, { cwd })).stdout.replace(endRegex, '').split(delim2).map(parseEntry)
 }
-
-module.exports = gitLog

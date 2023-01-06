@@ -3,15 +3,20 @@
   "version": "1.0.0-beta.1",
   "repository": "LinusU/node-git-log",
   "license": "MIT",
+  "type": "module",
+  "exports": "./index.js",
   "scripts": {
     "test": "standard && mocha"
   },
   "dependencies": {
-    "execa": "^3.3.0"
+    "execa": "^6.1.0"
   },
   "devDependencies": {
-    "fs-temp": "^1.1.2",
-    "mocha": "^6.2.2",
-    "standard": "^14.3.1"
+    "fs-temp": "^2.0.1",
+    "mocha": "^10.2.0",
+    "standard": "^17.0.0"
+  },
+  "engines": {
+    "node": "^14.18.0 || ^16.14.0 || >=18.0.0"
   }
 }

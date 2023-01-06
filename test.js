@@ -1,11 +1,11 @@
 /* eslint-env mocha */
 
-const assert = require('assert')
-const execa = require('execa')
-const temp = require('fs-temp/promise')
-const path = require('path')
+import assert from 'assert'
+import { execa } from 'execa'
+import temp from 'fs-temp/promises'
+import path from 'path'
 
-const gitLog = require('./')
+import gitLog from './index.js'
 
 function withRepo (fn) {
   return async () => {

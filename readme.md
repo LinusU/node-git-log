@@ -11,18 +11,18 @@ npm install --save git-log
 ## Usage
 
 ```js
-const gitLog = require('git-log')
+import gitLog from 'git-log'
 
-gitLog().then((commits) => {
-  console.log(commits[0].title)
-  //=> Upgrade to Node.js 10.x
+const commits = await gitLog()
 
-  console.log(commits[0].date)
-  //=> 2019-10-07T20:47:10.000Z
+console.log(commits[0].title)
+//=> Upgrade to Node.js 10.x
 
-  console.log(commits[0].body)
-  //=> This patch change the Node.js verison to...
-})
+console.log(commits[0].date)
+//=> 2019-10-07T20:47:10.000Z
+
+console.log(commits[0].body)
+//=> This patch change the Node.js verison to...
 ```
 
 ## API
