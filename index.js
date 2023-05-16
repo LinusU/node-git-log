@@ -26,5 +26,15 @@ export default async function gitLog (options = {}) {
 
   args.push(options.range || 'HEAD')
 
+  if (options.path) {
+    args.push("--")
+
+    if (Array.isArray(options.path)) {
+      args.push(...options.path)
+    } else {
+      args.push(options.path)
+    }
+  }
+
   return (await execa('git', args, { cwd })).stdout.replace(endRegex, '').split(delim2).map(parseEntry)
 }
