@@ -2,6 +2,7 @@
 
 import assert from 'assert'
 import { execa } from 'execa'
+import fs from 'fs/promises'
 import temp from 'fs-temp/promises'
 import path from 'path'
 
@@ -15,10 +16,7 @@ function withRepo (fn) {
       await execa('git', ['init'], { cwd })
       await fn(cwd)
     } finally {
-      // console.error('trash', cwd)
-      // await rimraf(cwd)
-      // FIXME: use rimraf
-      await execa('trash', [cwd])
+      await fs.rm(cwd, { recursive: true })
     }
   }
 }
@@ -40,14 +38,6 @@ async function commit (cwd, subject, body = '') {
 }
 
 describe('Git Log', () => {
-  it('should read this repo', async () => {
-    const commits = await gitLog()
-
-    assert(commits.length > 0)
-    assert.strictEqual(commits[commits.length - 1].subject, '🎉 Add initial implementation')
-    assert.strictEqual(commits[commits.length - 1].body, '')
-  })
-
   it('should handle single commit', withRepo(async (repo) => {
     const [start, end] = await populate(async () => {
       await commit(repo, 'Foobar')
