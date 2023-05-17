@@ -21,7 +21,7 @@ export interface Options {
   repo?: string
 
   /**
-   * Path(s) to a file or directory to limit results to specific changes. When no `path` is specified, the entire history of the project id returned.
+   * Path(s) to a file or directory to limit results to specific changes. When no `path` is specified, the entire history of the project is returned.
    */
   path?: string | string[]
 }
