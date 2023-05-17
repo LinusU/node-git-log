@@ -19,6 +19,11 @@ export interface Options {
    * @default process.cwd()
    */
   repo?: string
+
+  /**
+   * Path(s) to a file or directory to limit results to specific changes. When no `path` is specified, the entire history of the project is returned.
+   */
+  path?: string | string[]
 }
 
 export interface Commit {
