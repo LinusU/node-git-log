@@ -23,6 +23,9 @@ console.log(commits[0].date)
 
 console.log(commits[0].body)
 //=> This patch change the Node.js verison to...
+
+console.log(commits[0].hash)
+//=> e79b76217e03ba5b4e87182d07f855d9ff3e6d95
 ```
 
 ## API
@@ -37,4 +40,5 @@ console.log(commits[0].body)
 - returns `Promise<object[]>` - List of commits
   - `subject` (`string`) - Subject of the commit
   - `body` (`string`) - Body of the commit
+  - `hash` (`string`) - Hash of the commit
   - `date` (`Date`) - Committer date of the commit
