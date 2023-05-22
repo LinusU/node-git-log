@@ -31,6 +31,8 @@ export interface Commit {
   subject: string
   /** Body of the commit */
   body: string
+  /** Git commit hash */
+  hash: string
   /** Committer date of the commit */
   date: Date
 }
